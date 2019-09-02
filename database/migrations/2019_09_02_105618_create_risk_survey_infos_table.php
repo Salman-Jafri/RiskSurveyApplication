@@ -15,6 +15,17 @@ class CreateRiskSurveyInfosTable extends Migration
     {
         Schema::create('risk_survey_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->date('date');
+            $table->time('time');
+            $table->string('site_name');
+            $table->string('type');
+            $table->string('managing_agent');
+            $table->string('incharge_name');
+            $table->text('site_address');
+            $table->string('company_name');
+            $table->string('signature');
+            $table->string('company_stamp');
             $table->timestamps();
         });
     }
