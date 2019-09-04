@@ -19,7 +19,11 @@ use Illuminate\Http\Request;
 
 
 Route::post('login', 'APIController@appUserLogin');
-Route::get('check', 'APIController@index');
+Route::post('register-user', 'APIController@appUserRegister');
+Route::post('add-new-survey', 'APIController@addNewRiskSurvey');
+Route::post('add-initial-info', 'APIController@addInitialInfo');
+Route::post('add-location-info', 'APIController@addLocationInfo');
+Route::post('add-remaining-info', 'APIController@addRemainingInfo');
 //Route::get('login', function ()
 //{
 //    return "hey";
