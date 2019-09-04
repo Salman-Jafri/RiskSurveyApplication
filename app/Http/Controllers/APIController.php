@@ -445,4 +445,40 @@ class APIController extends Controller
 
 
     }
+
+
+    public function getSurveys(Request $request)
+    {
+        $user_id = $request->user_id;
+
+        if (!$request->filled('user_id'))
+        {
+            return response()->json(["status"=>0,"message"=>"User ID is required"]);
+        }
+
+
+        if ($request->filled('date'))
+        {
+            $date = $request->input('date');
+
+            $data = RiskSurveyInfo::where('user_id',$user_id)->where("date",$date)->with('locations')->get();
+
+        }
+        else
+        {
+            $data = RiskSurveyInfo::where('user_id',$user_id)->with('locations')->get();
+        }
+        if($data)
+        {
+            return response()->json(["status"=>1,"data"=>$data]);
+        }
+        else
+        {
+            return response()->json(["status"=>0,"message"=>"No record found"]);
+        }
+
+
+
+
+    }
 }

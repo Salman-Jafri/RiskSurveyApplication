@@ -24,7 +24,14 @@ Route::post('add-new-survey', 'APIController@addNewRiskSurvey');
 Route::post('add-initial-info', 'APIController@addInitialInfo');
 Route::post('add-location-info', 'APIController@addLocationInfo');
 Route::post('add-remaining-info', 'APIController@addRemainingInfo');
-//Route::get('login', function ()
+Route::post('get-surveys', 'APIController@getSurveys');
+//Route::get('show-data', function ()
 //{
-//    return "hey";
+//
+//    $user = \App\User::find(8);
+//
+//    $survey = \App\RiskSurveyInfo::find(35);
+//
+//    dd($survey->locations);
+//
 //});
